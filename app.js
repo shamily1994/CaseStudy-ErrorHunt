@@ -45,7 +45,7 @@ app.use(express.static(path.join(__dirname , '/public')));
 
 app.use('/login',loginRouter); 
 app.use('/signup',signupRouter); 
-app.use('/home',homeRouter); 
+app.use('/home',homeRouter); //part#1 point3
 app.use('/books',booksRouter); 
 app.use('/authors',authorsRouter); 
 
@@ -58,7 +58,12 @@ app.get('/',function(req,res){
 });
 
 
+app.get('/app/:id', checkUserAuth, findApp, renderView, sendJSON);
 
+function checkUserAuth(req, res, next) {
+  if (req.session.user) return next();
+  return next(new NotAuthorizedError());
+}
 
 //part#1 point5
 // app.listen(3000,()=>{

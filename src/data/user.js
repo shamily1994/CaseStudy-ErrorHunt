@@ -1,5 +1,5 @@
-var user=[{                
-    "id":1,   //part#1 point4
+var user=[{  //part#1 point4          
+    "id":1,   
     "uid":"aiswaryawalter@gmail.com",
     "pwd":"aiswarya"
 },
