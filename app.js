@@ -58,12 +58,7 @@ app.get('/',function(req,res){
 });
 
 
-app.get('/app/:id', checkUserAuth, findApp, renderView, sendJSON);
 
-function checkUserAuth(req, res, next) {
-  if (req.session.user) return next();
-  return next(new NotAuthorizedError());
-}
 
 //part#1 point5
 // app.listen(3000,()=>{
